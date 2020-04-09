@@ -11,12 +11,14 @@ import Center from '@/views/Center'
 import Consult from '@/views/Consult'
 import Nowplaying from '@/views/films/Nowplaying'
 import Comingsoon from '@/views/films/Comingsoon'
+import Error from '@/views/Error'
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/films',
     component: Films,
+    // 二级路由配置
     children: [
       {
         path: '/films/nowplaying',
@@ -28,7 +30,7 @@ const routes = [
       },
       {
         path: '',
-        redirecy: '/films/nowplaying'
+        redirect: '/films/nowplaying'
       }
     ]
   },
@@ -43,6 +45,14 @@ const routes = [
   {
     path: '/consult',
     component: Consult
+  },
+  {
+    path: '/',
+    redirect: '/films'
+  },
+  {
+    path: '*',
+    component: Error
   }
 ]
 
