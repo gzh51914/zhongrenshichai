@@ -1,6 +1,6 @@
 <template>
     <div class="cinema">
-        cinema...
+        cinema...modify
     </div>
 </template>
 
