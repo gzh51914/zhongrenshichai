@@ -9,6 +9,7 @@ import Cinema from '@/views/Cinema'
 import Center from '@/views/Center'
 // 引入Consult组件
 import Consult from '@/views/Consult'
+import Detail from '@/views/Detail'
 import Nowplaying from '@/views/films/Nowplaying'
 import Comingsoon from '@/views/films/Comingsoon'
 import Error from '@/views/Error'
@@ -49,6 +50,12 @@ const routes = [
   {
     path: '/',
     redirect: '/films'
+  },
+  {
+    name: 'detail',
+    path: '/detail/:id',
+    component: Detail,
+    props: true
   },
   {
     path: '*',
