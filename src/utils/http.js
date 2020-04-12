@@ -1,13 +1,4 @@
 import axios from 'axios'
-// 这个instance是针对于卖座的接口
-const instance = axios.create({
-  baseURL: 'https://m.maizuo.com', // 基本的url
-  timeout: 3000, // 延时默认3秒
-  headers: {
-    'X-Client-Info': '{"a":"3000","ch":"1002","v":"5.0.4","e":"15587791402160368550306","bc":"310100"}'
-  } // 请求头
-})
-
 // 针对于上线的http://47.96.0.211:3000
 const instance2 = axios.create({
   baseURL: '/info'
@@ -34,3 +25,11 @@ instance2.interceptors.response.use(res => {
   }
 })
 export { instance, instance2 }
+=======
+
+const instance = axios.create({
+  baseURL: 'https://m.maizuo.com',
+  timeout: 2000,
+  headers: { 'X-Client-Info': '{"a":"3000","ch":"1002","v":"5.0.4","e":"1586354171661424963735","bc":"440100"}' }
+})
+export default instance

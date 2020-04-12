@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import '@/utils/directives'
+
 // 引入rem.js
 import '@/utils/rem'
 // 引入全局样式
