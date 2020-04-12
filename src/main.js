@@ -10,6 +10,9 @@ import '@/utils/rem'
 // 引入全局样式
 import '@/stylesheets/main.scss'
 
+// 定义全局过滤器
+import '@/utils/filters'
+
 // 引入
 Vue.config.productionTip = false
 

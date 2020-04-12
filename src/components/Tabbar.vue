@@ -21,8 +21,8 @@ export default {
     return {
       navlist: [
         { id: 1, title: '电影', path: '/films', icon: 'icon-all' },
-        { id: 2, title: '影院', path: '/cinema', icon: 'icon-category' },
-        { id: 3, title: '咨询', path: '/consult', icon: 'icon-comments' },
+        { id: 2, title: '影院', path: '/cinemas', icon: 'icon-category' },
+        { id: 3, title: '咨讯', path: '/consult', icon: 'icon-comments' },
         { id: 4, title: '我的', path: '/center', icon: 'icon-account' }
       ]
     }
