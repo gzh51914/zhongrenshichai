@@ -9,9 +9,16 @@
             </div>
         </swiper>
         <div class="nav">
-            <ul>
-                <li @click="Nowplying"><span>正在热映</span></li>
-                <li @click="Comingsoon"><span>即将上映</span></li>
+            <ul class="nava">
+              <router-link
+                v-for="nav in navlist"
+                :key="nav.id"
+                :to="nav.path"
+                tag="li"
+                active-class="active"
+              >
+                <span class="aa">{{nav.title}}</span>
+              </router-link>
             </ul>
         </div>
         <!-- 路由容器 -->
@@ -31,7 +38,11 @@ export default {
   },
   data () {
     return {
-      banners: []
+      banners: [],
+      navlist: [
+        { id: 1, title: '正在热映', path: '/films/nowplaying' },
+        { id: 2, title: '即将上映', path: '/films/comingsoon' }
+      ]
     }
   },
   created () {
@@ -44,7 +55,7 @@ export default {
     //   console.log('***', res)
       this.banners = res.data.data
       this.$nextTick(() => {
-        Swip('.swiper-container')
+        new Swip('.swiper-container')
       })
     })
   },
@@ -60,6 +71,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.active{
+    color: orange;
+    border-bottom: 2px solid orange;
+}
     .swiper-container{
         height: 2.1rem;
     }
@@ -73,13 +88,13 @@ export default {
         width: 100%;
         height: 0.5rem;
         line-height: 0.5rem;
-        ul{
-            width: 100%;
-            li{
-                float: left;
-                width: 50%;
-                text-align: center;
-            }
+        .nava{
+          width: 100%;
+          display: flex;
+          li{
+            width: 50%;
+            text-align: center;
+          }
         }
     }
 </style>

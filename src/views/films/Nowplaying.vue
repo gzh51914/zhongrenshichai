@@ -6,7 +6,7 @@
             :key="data.filmId"
             :to="{
                 name:'detail',
-                params:{id:data.filmTd}
+                params:{id:data.filmId}
             }"
             tag="li">
                 <div class="films-Nowplaying-img">
@@ -27,7 +27,7 @@
                         <!-- <span class="actor" v-for="actor in data.actors" :key="actor.name">{{actor.name}}</span> -->
                     </div>
                     <div class="films-nation">
-                        <span class="nation">{{data.nation}}|{{data.runtime}}</span>
+                        <span class="nation">{{data.nation}}&#12288;|&#12288;{{data.runtime}}分钟</span>
                     </div>
                 </div>
                 <div class="films-Nowplaying-buy">购票</div>
@@ -44,7 +44,7 @@ import instance from '@/utils/http'
 // 定义过滤器(过滤器必须返回内容)
 Vue.filter('actorFilter', data => {
   if (data) {
-    return data.map(item => item.name).join('')
+    return data.map(item => item.name).join(' ')
   } else {
     return '暂无主演'
   }

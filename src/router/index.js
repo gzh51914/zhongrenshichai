@@ -9,10 +9,11 @@ import Cinema from '@/views/Cinema'
 import Center from '@/views/Center'
 // 引入Consult组件
 import Consult from '@/views/Consult'
-import Detail from '@/views/Detail'
+
 import Nowplaying from '@/views/films/Nowplaying'
 import Comingsoon from '@/views/films/Comingsoon'
 import Error from '@/views/Error'
+import Detail from '@/views/Detail'
 Vue.use(VueRouter)
 
 const routes = [

@@ -1,5 +1,5 @@
 <template>
-    <div class="swiper-container">
+    <div class="swiper-container"  :class="cName">
         <div class="swiper-wrapper">
             <slot></slot>
         </div>
@@ -11,7 +11,7 @@
 import 'swiper/css/swiper.min.css'
 
 export default {
-
+  props: ['cName']
 }
 </script>
 
