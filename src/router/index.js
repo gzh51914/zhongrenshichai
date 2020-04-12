@@ -3,8 +3,6 @@ import VueRouter from 'vue-router'
 
 // 引入Films组件
 import Films from '@/views/Films'
-// 引入Cinema组件
-import Cinema from '@/views/Cinema'
 // 引入Center组件
 import Center from '@/views/Center'
 // 引入Consult组件
@@ -35,8 +33,26 @@ const routes = [
     ]
   },
   {
-    path: '/cinema',
-    component: Cinema
+    path: '/cinemas',
+    component: () => import('@/views/Cinemas')
+  },
+  {
+    path: '/cinemas/search',
+    component: () => import('@/views/Search')
+  },
+  {
+    path: '/cinema/:id/flim',
+    component: () => import('@/views/Cinema'),
+    children: [
+      {
+        path: '/cinema/:id',
+        redirect: '/cinema/:id/film'
+      }
+    ]
+  },
+  {
+    path: '/city',
+    component: () => import('@/views/City')
   },
   {
     path: '/center',
